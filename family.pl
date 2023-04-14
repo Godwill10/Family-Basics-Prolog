@@ -54,3 +54,6 @@ sibling(X, Y) :- parent(Z, X), parent(Z, Y), X = Y.
 
 /* Grandparent rule */
 grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
+
+/* Grandmother rule */
+grandmother(X, Y) :- grandparent(X, Y), female(X).
