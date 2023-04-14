@@ -64,3 +64,7 @@ grandfather(X, Y) :- grandparent(X, Y), male(X).
 /* Ancestor rule */
 ancestor(X, Y) :- parent(X, Y).
 ancestor(X, Y) :- parent(Z, Y), ancestor(X, Z).
+
+/* Aunt rule */
+aunt(X, Y) :- parent(Z, Y), sister(X, Z).
+aunt(X, Y) :- parent(Z, Y), sibling(Z, P), married(X, P), female(X).
