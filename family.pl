@@ -45,3 +45,6 @@ father(X, Y) :- parent(X, Y), male(X).
 
 /* Brother rule */
 brother(X, Y) :- sibling(X, Y), male(X).
+
+/* Sister rule */
+sister(X, Y) :- sibling(X, Y), female(X).
