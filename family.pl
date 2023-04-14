@@ -39,3 +39,6 @@ female(emma).
 /* family_rules.pl */
 /* Mother rule */
 mother(X, Y) :- parent(X, Y), female(X).
+
+/* Father rule */
+father(X, Y) :- parent(X, Y), male(X).
