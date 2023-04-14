@@ -72,3 +72,6 @@ aunt(X, Y) :- parent(Z, Y), sibling(Z, P), married(X, P), female(X).
 /* Uncle rule */
 uncle(X, Y) :- parent(Z, Y), brother(X, Z).
 uncle(X, Y) :- parent(Z, Y), sibling(Z, P), married(X, P), male(X).
+
+/* Counsin rule */
+cousin(X, Y) :- parent(P1, X), parent(P2, Y), sibling(P1, P2).
