@@ -42,3 +42,6 @@ mother(X, Y) :- parent(X, Y), female(X).
 
 /* Father rule */
 father(X, Y) :- parent(X, Y), male(X).
+
+/* Brother rule */
+brother(X, Y) :- sibling(X, Y), male(X).
