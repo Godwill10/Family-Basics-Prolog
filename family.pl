@@ -60,3 +60,7 @@ grandmother(X, Y) :- grandparent(X, Y), female(X).
 
 /* Grandfather rule */
 grandfather(X, Y) :- grandparent(X, Y), male(X).
+
+/* Ancestor rule */
+ancestor(X, Y) :- parent(X, Y).
+ancestor(X, Y) :- parent(Z, Y), ancestor(X, Z).
