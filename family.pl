@@ -35,3 +35,7 @@ female(linda).
 female(alice).
 female(jane).
 female(emma).
+
+/* family_rules.pl */
+/* Mother rule */
+mother(X, Y) :- parent(X, Y), female(X).
