@@ -8,3 +8,18 @@ This Prolog program defines a family tree using facts and rules. The program con
 
 The program also includes a questions.pl file that contains sample queries that can be used to test the rules and facts. These queries include questions such as who someone's ancestors are, who someone's nieces and nephews are, and who someone's siblings are.
 
+**How to run/use**
+
+To run this program, you will need to have a Prolog interpreter installed on your computer. Once you have a Prolog interpreter, you can load the family_facts.pl and family_rules.pl files into the interpreter using the following commands:
+
+    consult('family_facts.pl').
+    consult('family_rules.pl').
+
+Once you have loaded the files, you can run the sample queries in the questions.pl file by loading it into the interpreter and running each query individually. For example:
+
+    consult('questions.pl').
+    cousin(mary, ahmed).
+
+This will output whether or not Mary is Ahmed's cousin.
+
+This program can be used to answer questions about a family tree and can be modified to include additional family members and relationships as needed.
