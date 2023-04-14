@@ -48,3 +48,6 @@ brother(X, Y) :- sibling(X, Y), male(X).
 
 /* Sister rule */
 sister(X, Y) :- sibling(X, Y), female(X).
+
+/* Sibling rule */
+sibling(X, Y) :- parent(Z, X), parent(Z, Y), X = Y.
