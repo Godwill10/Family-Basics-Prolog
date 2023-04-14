@@ -68,3 +68,7 @@ ancestor(X, Y) :- parent(Z, Y), ancestor(X, Z).
 /* Aunt rule */
 aunt(X, Y) :- parent(Z, Y), sister(X, Z).
 aunt(X, Y) :- parent(Z, Y), sibling(Z, P), married(X, P), female(X).
+
+/* Uncle rule */
+uncle(X, Y) :- parent(Z, Y), brother(X, Z).
+uncle(X, Y) :- parent(Z, Y), sibling(Z, P), married(X, P), male(X).
