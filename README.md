@@ -28,7 +28,7 @@ To run this program, you will need to have a Prolog interpreter installed on you
 Once you have loaded the files, you can run the sample queries in the questions.pl file by loading it into the interpreter and running each query individually. For example:
 
     consult('questions.pl').
-    cousin(mary, ahmed).
+    is_cousin(mary, ahmed).
 
 This will output whether or not Mary is Ahmed's cousin.
 
