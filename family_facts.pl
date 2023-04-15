@@ -3,10 +3,9 @@
     Author: Godwill Afolabi
     CSC 391 Programming Languages
 
-    family.pl
+    family_facts.pl
 */
 
-/* family_facts.pl */
 parent(john, jim).
 parent(john, julia).
 parent(bob, alice).
