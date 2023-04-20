@@ -23,7 +23,7 @@ sister(X, Y) :- sibling(X, Y), female(X).
 sibling(X, Y) :- parent(Z, X), parent(Z, Y), X = Y.
 
 /* Grandparent rule */
-grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
+grandparent(X, Y) :- parent(X, Z), parent(Z, Y), born(X, GX), born(Y, GY), GY - GX >= 30.
 
 /* Grandmother rule */
 grandmother(X, Y) :- grandparent(X, Y), female(X).
