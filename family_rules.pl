@@ -45,3 +45,17 @@ uncle(X, Y) :- parent(Z, Y), sibling(Z, P), married(X, P), male(X).
 
 /* Counsin rule */
 cousin(X, Y) :- parent(P1, X), parent(P2, Y), sibling(P1, P2).
+
+/* Related rule */
+related(X, Y) :- ancestor(X, Y).
+related(X, Y) :- ancestor(Y, X).
+related(X, Y) :- sibling(X, Y).
+related(X, Y) :- sibling(Y, X).
+related(X, Y) :- parent(X, Z), related(Z, Y).
+related(X, Y) :- parent(Y, Z), related(Z, X).
+related(X, Y) :- aunt(X, Z), related(Z, Y).
+related(X, Y) :- aunt(Y, Z), related(Z, X).
+related(X, Y) :- uncle(X, Z), related(Z, Y).
+related(X, Y) :- uncle(Y, Z), related(Z, X).
+related(X, Y) :- cousin(X, Y).
+related(X, Y) :- cousin(Y, X).
