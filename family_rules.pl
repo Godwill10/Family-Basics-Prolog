@@ -32,8 +32,8 @@ grandmother(X, Y) :- grandparent(X, Y), female(X).
 grandfather(X, Y) :- grandparent(X, Y), male(X).
 
 /* Ancestor rule */
-ancestor(X, Y) :- parent(X, Y).
-ancestor(X, Y) :- parent(Z, Y), ancestor(X, Z).
+ancestor(X, Y) :- parent(X, Y), born(X, BX), born(Y, BY), BX =< BY.
+ancestor(X, Y) :- parent(Z, Y), ancestor(X, Z), born(X, BX), born(Y, BY), BY - BX >= 30.
 
 /* Aunt rule */
 aunt(X, Y) :- parent(Z, Y), sister(X, Z).
