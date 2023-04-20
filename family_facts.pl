@@ -34,3 +34,15 @@ female(linda).
 female(alice).
 female(jane).
 female(emma).
+
+born(john, 1950).
+born(susan, 1955).
+born(jim, 1975).
+born(julia, 1978).
+born(bob, 1962).
+born(linda, 1965).
+born(alice, 1990).
+born(ben, 1993).
+born(dave, 1970).
+born(jane, 1973).
+born(emma, 2000).
