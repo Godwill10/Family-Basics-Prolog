@@ -47,3 +47,14 @@ true .
 
 ?- who_nieces_nephews('John','jim').
 false.
+
+// Iteration 2 questions
+
+?- is_not_related('jane', 'emma').
+false.
+
+?- is_parent_less_than_20('ben').
+false.
+
+?- is_younger_parent('jim').
+false.
