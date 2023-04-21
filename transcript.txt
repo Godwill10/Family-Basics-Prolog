@@ -1,60 +1,94 @@
 // Transcript: Report of testing
 
-?- consult('family_facts.pl').
-true.
+// Iteration 1:
+    ?- consult('family_facts.pl').
+    true.
 
-?- consult('family_rules.pl').
-true.
+    ?- consult('family_rules.pl').
+    true.
 
-?- consult('questions.pl').
-true.
+    ?- consult('questions.pl').
+    true.
 
-?- is_brother(john, bob).
-false.
+    ?- is_brother(john, bob).
+    false.
 
-?- is_cousin(john, julia).
-false.
+    ?- is_cousin(john, julia).
+    false.
 
-?- consult('questions.pl').
-true.
+    ?- consult('questions.pl').
+    true.
 
-?- is_cousin(john, julia).
-false.
+    ?- is_cousin(john, julia).
+    false.
 
-?- is_brother(john, bob).
-false.
+    ?- is_brother(john, bob).
+    false.
 
-?- who_children('Peter', X).
-false.
+    ?- who_children('Peter', X).
+    false.
 
-?- who_nieces_nephews('Robert', X).
-false.
+    ?- who_nieces_nephews('Robert', X).
+    false.
 
-?- who_siblings('John', X).
-false.
+    ?- who_siblings('John', X).
+    false.
 
-?- who_children('linda', 'ben').
-ben is a child of linda
-true.
+    ?- who_children('linda', 'ben').
+    ben is a child of linda
+    true.
 
-?- who_female_children('susan','julia').
-julia is a female child of susan
-true.
+    ?- who_female_children('susan','julia').
+    julia is a female child of susan
+    true.
 
-?- is_ancestor('jane', 'emma').
-jane is an ancestor of emma
-true .
+    ?- is_ancestor('jane', 'emma').
+    jane is an ancestor of emma
+    true .
 
-?- who_nieces_nephews('John','jim').
-false.
+    ?- who_nieces_nephews('John','jim').
+    false.
 
 // Iteration 2 questions
 
-?- is_not_related('jane', 'emma').
-false.
+    Tasks: 
+        Query to find if two people are related
+        ?- is_not_related('jane', 'emma').
+        false.
 
-?- is_parent_less_than_20('ben').
-false.
+        Query to find if a person parent is less than 20
+        ?- is_parent_less_than_20('ben').
+        false.
 
-?- is_younger_parent('jim').
-false.
+        Query to determine that there is more than one family in the database:
+        ?- parent(X, Y), parent(A, B).
+            X = A, A = john,
+            Y = B, B = jim 
+
+        Query to find who is a younger parent than their child?
+        ?- is_younger_parent(X, Y).
+        dave is younger than their child emma
+        true.
+
+        Query to find parents younger than their kids:
+        ?- is_younger_parent('julia').
+        false.
+
+        Query to count adults in year 2021:
+        ?- born(X, BX), 2021 - BX >= 18, write(X), write(' is an adult in 2021'), nl, fail.
+        john is an adult in 2021
+        susan is an adult in 2021
+        jim is an adult in 2021
+        julia is an adult in 2021
+        bob is an adult in 2021
+        linda is an adult in 2021
+        alice is an adult in 2021
+        ben is an adult in 2021
+        dave is an adult in 2021
+        jane is an adult in 2021
+        emma is an adult in 2021
+        false.
+
+        Query to count people older than an aunt or uncle:
+        ?- (aunt(A, X); uncle(U, X)), born(X, BX), born(AU, BAU), BX < BAU, write(X), write(' is older than their aunt/uncle'), nl, fail.
+        false.

@@ -17,6 +17,7 @@ who_children(X, Y) :- parent(X, Y), write(Y), write(' is a child of '), write(X)
 is_not_related(X, Y) :-
     not(related(X, Y)),
     not(related(Y, X)).
-
-is_parent_less_than_20(X) :- parent(X, Y), born(Y, BY), BY - X < 20, write(X), write(' had a child at age less than 20'), nl.
-is_younger_parent(X) :- parent(X, Y), born(X, BX), born(Y, BY), BX > BY, write(X), write(' is younger than their child '), write(Y), nl.
+is_parent_less_than_20(X, Y) :- parent(X, Y), born(Y, BY), BY - X < 20, write(X), write(' had a child at age less than 20'), nl.
+is_younger_parent(X, Y) :- parent(X, Y), born(X, BX), born(Y, BY), BX > BY, write(X), write(' is younger than their child '), write(Y), nl.
+count_adults_in_2021(X, BX) :- born(X, BX), 2021 - BX >= 18, write(X), write(' is an adult in 2021'), nl.
+count_older_than_aunt_uncle (A, X) :- (aunt(A, X); uncle(U, X)), born(X, BX), born(AU, BAU), BX < BAU, write(X), write(' is older than their aunt/uncle'), nl.
